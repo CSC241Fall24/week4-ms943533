@@ -25,6 +25,20 @@ public class Problem1 {
         l2.next = num_2;
 
 
-        ListNode result_list = concatenate(l1, l2);      
+        ListNode result_list = concatenate(l1, l2);
+        
+        printList(result_list);     
    }
+   
+    public static void printList(ListNode head) {
+    ListNode current = head;
+        while (current != null) {
+            System.out.print(current.val);
+        if (current.next != null) {
+            System.out.print(" -> ");
+        }
+        current = current.next;
+         }
+    System.out.println();
+    }
 }
