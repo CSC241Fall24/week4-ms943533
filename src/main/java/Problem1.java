@@ -3,7 +3,7 @@ public class Problem1 {
     public static ListNode concatenate(ListNode l1, ListNode l2) {
 
         if (l1 == null) {
-            return copyList(l2);
+            return l2;
         }
         if (l2 == null) {
             return l1;
