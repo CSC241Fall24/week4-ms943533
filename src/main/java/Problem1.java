@@ -1,6 +1,7 @@
 public class Problem1 {
 
     public static ListNode concatenate(ListNode l1, ListNode l2) {
+        
         ListNode y = l1;
         while (y.next != null) {
             y = y.next;
@@ -16,6 +17,21 @@ public class Problem1 {
         }
         y.next = l2Copy; 
         return l1;
+    }
+    
+    private static ListNode copyList(ListNode node) {
+        if (node == null) return null;
+        ListNode newHead = new ListNode(node.val);
+        ListNode newTail = newHead;
+        ListNode current = node.next;
+
+        while (current != null) {
+            newTail.next = new ListNode(current.val);
+            newTail = newTail.next;
+            current = current.next;
+        }
+
+        return newHead;
     }
 
     public static void main(String[] args) {
